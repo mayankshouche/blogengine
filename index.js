@@ -2,11 +2,13 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import routes from './routes/routes'
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const port = process.env.port || 3000;
-const user = 'shouchem'; const password = 'aE0sGTWnfvHDXFSh';
-mongoose.connect(`mongodb+srv://${user}:${password}@cluster0-jvrqe.mongodb.net/test?retryWrites=true&w=majority`,
+mongoose.connect(`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0-jvrqe.mongodb.net/test?retryWrites=true&w=majority`,
     { useUnifiedTopology: true, useNewUrlParser: true });
 
 const db = mongoose.connection;
