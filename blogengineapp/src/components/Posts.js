@@ -8,7 +8,7 @@ const parsePost = (postDate) => {
 const Posts = ({ posts }) => {
     return (
         <div>
-            <center><h1>Posts</h1></center> 
+            <center><h1>Mayank's Blog</h1></center> 
             {posts.map((post) => (
                 //need to identify each element with _id to avoid React mutation errors
                 <div className="card" key={post._id}> 
