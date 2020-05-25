@@ -3,13 +3,13 @@ import mongoose from 'mongoose';
 import { createPost, findAllPosts, findPost } from '../controllers/postController';
 
 const routes = (app) => {
-    app.route('/createPost')
+    app.route('/api/createPost')
     .post(createPost);
 
-    app.route('/')
+    app.route('/api/')
     .get(findAllPosts);
 
-    app.route('/:postID')
+    app.route('/api/:postID')
     .get(findPost);
 }
 

@@ -9,7 +9,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3030/api/')
+    axios.get('http://192.168.1.22:3030/api/') //to be replaced!!
     .then((res) => {
       const dat = res.data;
       this.setState({ posts: dat });
@@ -19,7 +19,10 @@ class App extends Component {
 
   render() {
     return (
-      <Posts posts={this.state.posts} />
+      //use Bootstrap container for card display
+      <div className = "container"> 
+        <Posts posts={this.state.posts} />
+      </div>
     );
   }
 }
