@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Posts from './components/Posts'
+import Posts from './components/Posts';
+import Footer from './components/Footer';
 import axios from 'axios';
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
       //use Bootstrap container for card display
       <div className = "container"> 
         <Posts posts={this.state.posts} />
+        <Footer />
       </div>
     );
   }
